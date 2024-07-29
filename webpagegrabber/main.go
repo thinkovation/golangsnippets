@@ -4,8 +4,8 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"time"
 
 	"github.com/chromedp/chromedp"
@@ -48,7 +48,7 @@ func main() {
 	}
 
 	// Save content to the output file
-	err = ioutil.WriteFile(outputFile, []byte(content), 0644)
+	err = os.WriteFile(outputFile, []byte(content), 0644)
 	if err != nil {
 		log.Fatalf("Failed to write to file: %v", err)
 	}
